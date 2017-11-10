@@ -146,12 +146,14 @@ public class BankCustomer extends Human {
 	 */
 	@Override
 	public String toString() {
-		String s = "Customer: " + getName() + ", " + getAge() + "\n";
-		int size = customerAccounts.size();
-		for (int i = 0; i < size; i++) {
-			s += "BankAccount: " + customerAccounts.get(i);
+		String s = "Customer: " + getName() + ", " + getAge() + "\n";		
+		
+		
+		for (int i = 0; i < customerAccounts.size(); i++) {
+		//	s += "BankAccount: " + customerAccounts.get(i);
+			s += customerAccounts.get(i);//.toString();
 		}
-		s += "\n" + s;
+	
 		return s;
 	}
 }

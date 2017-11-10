@@ -147,6 +147,7 @@ public class BankAccount implements BankOperations{
      */
 	@Override
 	public String toString(){
+		
 		String s = "[accountnumber = " + getAccountNumber() + ", balance = " + getBalance() + ", accountType = " + getAccountType() + "]\n"; 
 		return s;
 	}
