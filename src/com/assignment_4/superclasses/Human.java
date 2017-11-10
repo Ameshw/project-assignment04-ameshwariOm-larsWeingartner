@@ -7,8 +7,6 @@ package com.assignment_4.superclasses;
  * @author Ameshwari Om     
  * @author Lars Weingartner
  * @version 1.0
- * @exception NameFormatException  
- *
  *
  */
 public class Human{
@@ -44,7 +42,7 @@ public class Human{
      * @author Ameshwari Om    
      * @author Lars Weingartner
      * @version 1.0
-     * @return The attribute name.
+     * @return name The attribute name.
      */
     public String getName(){
 	return this.name;
@@ -57,8 +55,7 @@ public class Human{
      * @author Ameshwari Om     
      * @author Lars Weingartner
      * @version 1.0
-     * @param The name used to set
-     * @exception NameFormatException
+     * @param name The name used to set
      */
     public void setName(String name){
     	this.name = name;
@@ -70,7 +67,7 @@ public class Human{
      * @author Ameshwari Om    
      * @author Lars Weingartner
      * @version 1.0
-     * @return The attribute age.
+     * @return age The attribute age.
      */
     public int getAge(){
 	return this.age;
@@ -82,7 +79,7 @@ public class Human{
      * @author Ameshwari Om     
      * @author Lars Weingartner
      * @version 1.0
-     * @param The age used to set
+     * @param age The age used to set
      */
     public void setAge(int age){
     	this.age = age;

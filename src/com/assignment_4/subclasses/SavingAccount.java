@@ -16,7 +16,7 @@ import com.assignment_4.superclasses.BankAccount;
 public class SavingAccount extends BankAccount{
 
 	/**
-	 *      
+	 * Constructor that randomly set the account number as string with 6 chars, Balance sets to zero and accountType to "Saving Account"     
 	 * 
 	 * @author Ameshwari Om
 	 * @author Lars Weingartner

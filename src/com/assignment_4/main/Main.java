@@ -10,8 +10,7 @@ import com.assignment_4.subclasses.SavingAccount;
  * @author Ameshwari Om     
  * @author Lars Weingartner
  * @version 1.0
- *
- *
+ * 
  */
 
 public class Main {
@@ -38,6 +37,6 @@ public class Main {
 		account = bc.getCustomerAccounts().get(2).getAccountNumber();
 		bc.depositToAccount(account, 200.0);
 		System.out.println(bc.toString());
-
+		
 	}
 }

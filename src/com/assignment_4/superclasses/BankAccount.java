@@ -14,12 +14,12 @@ import com.assignment_4.interfaces.BankOperations;
  */
 
 public class BankAccount implements BankOperations{
-	String accountNumber = "";
-	String accountType = "";
-	double balance = 0.0;
+	private String accountNumber = "";
+	private String accountType = "";
+	private double balance = 0.0;
 
 	/**
-	 * Constructor     
+	 * Constructor that randomly set the account number as string with 6 chars, Balance sets to zero and accountType to "Bank Account"    
 	 * 
 	 * @author Ameshwari Om
 	 * @author Lars Weingartner
@@ -33,91 +33,88 @@ public class BankAccount implements BankOperations{
 	}
 	
     /**
-     * Method 
+     * getter for account number
      *
      * @author Ameshwari Om    
      * @author Lars Weingartner
      * @version 1.0
-     * @param
-     * @return 
+     * @return accountNumber the account number
      */	
 	public String getAccountNumber() {
 		return accountNumber;
 	}
 	
     /**
-     * Method 
+     * setter for account number
      *
      * @author Ameshwari Om    
      * @author Lars Weingartner
      * @version 1.0
-     * @param
-     * @return 
+     * @param accountNumber the account number
+     * 
      */
 	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 	
     /**
-     * Method 
+     * getter for account type
      *
      * @author Ameshwari Om    
      * @author Lars Weingartner
      * @version 1.0
-     * @param
-     * @return 
+     * @return accountType the account type
      */
 	public String getAccountType() {
 		return accountType;
 	}
 	
     /**
-     * Method 
+     * setter for account type
      *
      * @author Ameshwari Om    
      * @author Lars Weingartner
      * @version 1.0
-     * @param
-     * @return 
+     * @param accountType The type of account
+     * 
      */
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
 	
     /**
-     * Method 
+     * getter for balance
      *
      * @author Ameshwari Om    
      * @author Lars Weingartner
      * @version 1.0
-     * @param
-     * @return 
+     * @return balance the accounts balance to get
      */
 	public double getBalance() {
 		return balance;
 	}
 	
     /**
-     * Method 
+     * setter for balance
      *
      * @author Ameshwari Om    
      * @author Lars Weingartner
      * @version 1.0
-     * @param
-     * @return 
+     * @param balance the accounts balance to get
+     * 
      */
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
 	
     /**
-     * Method 
+     * withdraw amount from balance
      *
      * @author Ameshwari Om    
      * @author Lars Weingartner
      * @version 1.0
-     * @param
-     * @return 
+     * @param amount to withdraw from balance
+     * 
      */
 	public void withdrawMoney(double amount) {
 		if(balance >= 0){
@@ -128,26 +125,25 @@ public class BankAccount implements BankOperations{
 	}
 	
     /**
-     * Method 
+     * depositMoney add amount to balance 
      *
      * @author Ameshwari Om    
      * @author Lars Weingartner
      * @version 1.0
-     * @param
-     * @return 
+     * @param amount to set the balance
+     * 
      */
 	public void depositMoney(double amount) {
 		setBalance(getBalance() + amount);	
 	}
 	
     /**
-     * Method 
+     * Method for getting account information in a readable string 
      *
      * @author Ameshwari Om    
      * @author Lars Weingartner
      * @version 1.0
-     * @param
-     * @return 
+     * @return s a formated string with account number, balance and account type
      */
 	@Override
 	public String toString(){

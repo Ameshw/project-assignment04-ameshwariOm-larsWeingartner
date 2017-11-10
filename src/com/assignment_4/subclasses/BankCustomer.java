@@ -3,28 +3,29 @@ package com.assignment_4.subclasses;
 import com.assignment_4.superclasses.BankAccount;
 import com.assignment_4.superclasses.Human;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
- * Class
+ * Class BankCustomer to handle the customers and there accounts
  * 
  * @author Ameshwari Om
  * @author Lars Weingartner
  * @version 1.0
  * 
- * 
  */
 
 public class BankCustomer extends Human {
 
-	ArrayList<BankAccount> customerAccounts = new ArrayList<BankAccount>();
+	private ArrayList<BankAccount> customerAccounts = new ArrayList<BankAccount>();
 
 	/**
-	 * Constructor
+	 * Constructor using the superclass Human
 	 * 
 	 * @author Ameshwari Om
 	 * @author Lars Weingartner
 	 * @version 1.0
-	 * 
+	 * @param age the age of the customer
+	 * @param name the customer's name
 	 */
 	public BankCustomer(int age, String name) {
 		super(name, age);
@@ -32,118 +33,125 @@ public class BankCustomer extends Human {
 	}
 
 	/**
-	 * 
+	 * Constructor using the superclass Human 
 	 * 
 	 * @author Ameshwari Om
 	 * @author Lars Weingartner
 	 * @version 1.0
-	 * 
+	 * @param age the age of the customer
+	 * @param name the customer's name
 	 */
 	public BankCustomer(String name, int age) {
 		super(name, age);
 	}
 
 	/**
-	 * Method
+	 * Getter for the customer's accounts
 	 * 
 	 * @author Ameshwari Om
 	 * @author Lars Weingartner
 	 * @version 1.0
-	 * @param
-	 * @return
+	 * @return customerAccounts an arrayList with with the customers accounts 
 	 */
 	public ArrayList<BankAccount> getCustomerAccounts() {
 		return customerAccounts;
 	}
 
 	/**
-	 * Method
+	 * setter for the customer's account
 	 * 
 	 * @author Ameshwari Om
 	 * @author Lars Weingartner
 	 * @version 1.0
-	 * @param
-	 * @return
+	 * @param customerAccounts to set in the customer's accountList
+	 *
 	 */
 	public void setCustomerAccounts(ArrayList<BankAccount> customerAccounts) {
 		this.customerAccounts = customerAccounts;
 	}
 
 	/**
-	 * Method
+	 * AddAccount() adds an account to the customers accounts
 	 * 
 	 * @author Ameshwari Om
 	 * @author Lars Weingartner
 	 * @version 1.0
-	 * @param
-	 * @return
+	 * @param bankAccount the account to add to the customers accounts
+	 * 
 	 */
 	public void addAccount(BankAccount bankAccount) {
 		this.customerAccounts.add(bankAccount);
 	}
 
 	/**
-	 * Method
+	 * depositToAccount adding amount to the balance of the customer's account. If the amount to deposit are less than zero, a message will
+	 *  ask the user to insert a new amount.
 	 * 
 	 * @author Ameshwari Om
 	 * @author Lars Weingartner
 	 * @version 1.0
-	 * @param
-	 * @return
+	 * @param accountNumber the account number to add to
+	 * @param amount the amount to add to the customer's account
+	 * 
 	 */
 	public void depositToAccount(String accountNumber, double amount) {
-		if (amount < 0) {
+		while (amount < 0) {
 			System.out.println("The amount must be greater than 0!");
-		} else {
-			for (int i = 0; i < customerAccounts.size(); i++) {
-				if (customerAccounts.get(i).getAccountNumber()
-						.equals(accountNumber)) {
-					customerAccounts.get(i).depositMoney(amount);
-				}
+			Scanner sc = new Scanner(System.in);
+			amount = sc.nextDouble();
+			sc.close();
+		}
+		for (int i = 0; i < customerAccounts.size(); i++) {
+			if (customerAccounts.get(i).getAccountNumber()
+					.equals(accountNumber)) {
+			customerAccounts.get(i).depositMoney(amount);
 			}
 		}
 	}
 
 	/**
-	 * Method
+	 * withdrawFromAccount subtract amount from the balance of the customer's account. If the amount to withdraw are less than zero, a message will
+	 *  ask the user to insert a new amount.
 	 * 
 	 * @author Ameshwari Om
 	 * @author Lars Weingartner
 	 * @version 1.0
-	 * @param
-	 * @return
+	 * @param accountNumber the account number to withdraw from
+	 * @param amount the amount to withdraw from the customer's account
+	 *
 	 */
 	public void withdrawFromAccount(String accountNumber, double amount) {
-		if (amount < 0) {
+		while (amount < 0) {
 			System.out.println("The amount must be greater than 0!");
-		} else {
-			for (int i = 0; i < customerAccounts.size(); i++) {
+			Scanner sc = new Scanner(System.in);
+			amount = sc.nextDouble();
+			sc.close();
+		}
+		for (int i = 0; i < customerAccounts.size(); i++) {
 				if (customerAccounts.get(i).getAccountNumber()
 						.equals(accountNumber)) {
 					customerAccounts.get(i).withdrawMoney(amount);
 				}
-			}
+			
 		}
 	}
 
 	/**
-	 * Method
+	 * Method toString returns a string with formated information about the customer's name, ageand account information
 	 * 
 	 * @author Ameshwari Om
 	 * @author Lars Weingartner
 	 * @version 1.0
-	 * @param
-	 * @return
+	 * @return s the string with formated information
 	 */
 	@Override
 	public String toString() {
-		String s1 = "";
+		String s = "Customer: " + getName() + ", " + getAge() + "\n";
 		int size = customerAccounts.size();
 		for (int i = 0; i < size; i++) {
-			s1 += "BankAccount: " + customerAccounts.get(i);
+			s += "BankAccount: " + customerAccounts.get(i);
 		}
-		// System.out.println("customerAccount[1]" + customerAccounts.get(1));
-		String s = "Customer: " + getName() + ", " + getAge() + "\n" + s1;
+		s += "\n" + s;
 		return s;
 	}
 }
