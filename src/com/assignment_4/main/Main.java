@@ -5,7 +5,7 @@ import com.assignment_4.subclasses.BankCustomer;
 import com.assignment_4.subclasses.PersonalAccount;
 import com.assignment_4.subclasses.SavingAccount;
 /**
- * Class 
+ * Class Main
  *  
  * @author Ameshwari Om     
  * @author Lars Weingartner

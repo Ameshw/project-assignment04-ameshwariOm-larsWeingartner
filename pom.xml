@@ -8,4 +8,5 @@
   <build>
     <sourceDirectory>src</sourceDirectory>
   </build>
+  <packaging>ejb</packaging>
 </project>
